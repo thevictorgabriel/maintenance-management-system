@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "usuario",
-        "administrador"
+        "administrador",
+        "tecnico"
     ]
 }
