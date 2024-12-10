@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --roxo-primario: #240234;
+    --roxo-secundario: #331E59;
+    --azul-principal: #3746CD;
+    --azul-secundário: #A3F4FF;
+    --verde: #44E454;
+    --vermelho: #F44141;
+    --amarelo: #E7F549;
+    --branco: #FFFFFF;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    text-decoration: none;
+    list-style: none;
+    color: var(--branco);
+}
+
+body {
+    width: 100%;
+    height: 100vh; 
+    background: linear-gradient(113deg, #240234 8%, #331E59 25%, #3746CD 56%, #A3F4FF 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Classes do site */
+.container {
+    padding: 0 8%;
+    margin: 0 auto;
+}
+
+.btn-login {
+    background: #a3f4ff80; 
+    border-radius: 15px; 
+    border: 2px rgba(255, 255, 255, 0.50) solid;
+    padding: 10px 32px;
+    cursor: pointer;
+}
+
+/* nav */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+nav a{
+    display: flex;
+}
+
+nav img {
+    width: 20px;
+}
+
+nav ul.menu-links {
+    display: flex;
+    align-items: center;
+}
+
+nav ul.menu-links li {
+    margin: 0 30px;
+}
+
+/* main */
+
+main .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+main .main_text {
+    width: 50%;
+}
+
+main .main_text h1 {
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 77px;
+    color: #FFFFFF;
+}
+
+main .main_text p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FEFEFE;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+main .main_text button {
+    border-radius: 10px;
+    background: #44E454;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.10);
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding: 15px 70px;
+}
+
+main .main_img {
+    width: 50%;
+}
+
+main .main_img img{
+    width: 100%;
+    position: relative;
+}
