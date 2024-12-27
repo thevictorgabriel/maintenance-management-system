@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação - Ice T</title>
+    <link rel="stylesheet" href="../../public/stylesheets/usuario/solicitar-manutencao.css">
+    <link rel="icon" href="../../public/images/floco-de-neve 1.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">❄️ Ice T</div>
+        <nav class="nav">
+            <a href="\">Home</a>
+            <a href="#" class="active">Solicitações</a>
+            <a href="#">Contato</a>
+            <a href="#">Sobre</a>
+        </nav>
+        <div class="user-profile">
+            <img src="../../public/images/logo-IceT.png" alt="Usuário" class="avatar">
+            <span>Victor Gabriel</span>
+        </div>
+    </header>
+    
+    <main class="content">
+        <section class="form-section">
+            <h2>Formulário de Solicitação</h2>
+            <div class="form-group">
+                <select id="bloco">
+                    <option>Bloco</option>
+                    <option>Bloco A</option>
+                    <option>Bloco B</option>
+                    <option>Bloco C</option>
+                    <option>Bloco D</option>
+                    <option>Bloco E</option>
+                </select>
+                <input class="numeroSala" type="number" placeholder="Número da sala" id="numeroSala">
+                <select id="equipamento">
+                    <option>Equipamento</option>
+                    <option>Equipamento 1</option>
+                    <option>Equipamento 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h2 for="descricao">Descrição</h2>
+                <textarea id="descricao" rows="3"></textarea>
+            </div>
+            <button class="submit-button" id="btnSolicitarManutenção">Solicitar Manutenção</button>
+        </section>
+        
+        <section class="status-section">
+            <h2>Acompanhamento</h2>
+            <div>
+                <ul id="list" class="manutencao_corretiva-list">
+    
+                </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
