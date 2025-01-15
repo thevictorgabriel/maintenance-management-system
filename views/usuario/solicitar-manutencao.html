@@ -1,0 +1,109 @@
+<!-- public/html/home.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação</title>
+    <link rel="stylesheet" href="../../public/stylesheets/usuario/solicitar-manutencao.css">
+    <link rel="icon" href="../../public/images/logo-IceT.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <!-- container -->
+        <div class="container">
+            <!-- nav -->
+            <nav>
+                <!-- logo -->
+                <a href="/">
+                    <img src="../../public/images/logo-IceT.png" alt="IceT">
+                    <p>IceT</p>
+                </a>
+                <!-- links -->
+                <ul class="menu-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/manutencao-corretiva" id="manutencao-corretiva">Solicitações</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+                <!-- button de login -->
+                <button class="btn-login" id="btnlogin">Perfil</button>
+            </nav>
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <!-- container -->
+        <div class="container">
+            <form>
+                <h1>Formulário de Solicitação</h1>
+                <div class="grupo">
+                    <label for="bloco">Bloco *
+                        <select id="bloco" name="bloco" required>
+                            <option value="">selecione</option>
+                            <option value="c">Bloco c</option>
+                        </select>
+                    </label>
+
+                    <label for="sala">Sala *
+                        <select id="sala" name="sala" required>
+                            <option value="">selecione</option>
+                            <option value="102">Sala 102</option>
+                        </select>
+                    </label>
+
+                    <label for="equipamneto">Equipamento *
+                        <select id="equipamneto" name="equipamneto" required>
+                            <option value="">selecione</option>
+                            <option value="split">Split</option>
+                        </select>
+                    </label>
+
+                    <label for="problema">Problema *
+                        <select id="problema" name="problema" required>
+                            <option value="">selecione</option>
+                            <option value="X">problema X</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="grupo">
+                    <label for="descricao">Descrição *
+                        <textarea id="descrica0" name="descrica0" required placeholder="Descreva aqui..."></textarea>
+                    </label>
+                </div>
+
+
+                <button type="submit" id="entrar">Solicitar Manutenção</button>
+
+            </form>
+        </div>
+    </main>
+    <!-- section de acompanhamento -->
+    <section>
+        <div class="container">
+            <h1>Acompanhamento</h1>
+                <table>
+                    <tr class="cabecalho">
+                      <th>Local</th>
+                      <th>Aparelho</th>
+                      <th>Data de Solicitação</th>
+                      <th>Problema</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr>
+                      <td>Bloco C - 102</td>
+                      <td>Splite</td>
+                      <td>23/08/2024</td>
+                      <td>ruído ruim</td>
+                      <td>solicitado</td>
+                    </tr>
+                  </table>
+        </div>
+    </section>
+
+</body>
+
+</html>

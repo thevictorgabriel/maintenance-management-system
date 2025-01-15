@@ -27,12 +27,12 @@
 body {
     width: 100%;
     height: 100vh; 
-    background: linear-gradient(113deg, #240234 8%, #331E59 25%, #3746CD 56%, #A3F4FF 100%);
+    background: #EEEEF6;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
 }
 
 .container {
@@ -47,7 +47,14 @@ nav {
     align-items: center;
     justify-content: space-between;
     margin-top: 50px;
+    background-color: #BB1414;
     padding: 12px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(113deg, #240234 9.68%, #331E59 25.78%, #3746CD 56.46%, #A3F4FF 100%);
+}
+
+nav .container {
+    padding: 0;
 }
 
 nav a{
@@ -88,7 +95,7 @@ nav ul li:hover {
     background: rgba(55, 70, 205, 0.50);
 }
 
-nav ul li:nth-child(1) {
+nav ul li:nth-child(2) {
     border-radius: 54px;
     border: 2px solid rgba(163, 244, 255, 0.50);
     background: rgba(55, 70, 205, 0.50);
@@ -110,66 +117,20 @@ nav ul li:nth-child(1) {
 
 /* main */
 
-main .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-main .main_text {
-    width: 50%;
-}
-
-main .main_text h1 {
-    font: 500 60px/149.94% Poppins;
-    color: var(--branco);
-}
-
-main .main_text p {
-    font: 500 17px/normal Poppins;
-    color: var(--branco);
-    margin-top: 25px;
-    margin-bottom: 30px;
-}
-
-main .main_text button {
-    cursor: pointer;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    background: var(--verde);
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.10);
-    font: 700 20px/normal Poppins;
-    text-align: center;
-    color: var(--branco);
-    padding: 15px 70px;
-}
-
-main .main_text button:hover {
-    border: 2px solid white;
-}
-
-main .main_img {
-    width: 50%;
-}
-
-main .main_img img{
-    width: 100%;
-    position: relative;
-}
-
-/* footer */
-
-footer .container {
-    background-color: var(--branco);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-footer p{
-    cursor: pointer;
-    margin: 3rem 0;
-    font: 500 17px/normal Poppins;
+h1 {
+    font: 600 25px/normal Poppins;
     color: var(--roxo-primario);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--branco);
+    border-radius: 20px;
+    gap: 20px;
+    padding: 4% 0;
 }
