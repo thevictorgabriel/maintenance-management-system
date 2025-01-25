@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico</title>
+    <link rel="stylesheet" href="../../public/stylesheets/administrador/adm-historico.css">
+    <link rel="icon" href="../../public/images/logo-IceT.png" type="image/x-icon">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../../public/images/logo-IceT.png"> Ice T
+        </div>
+        <nav class="menu">
+            <a href="#" class="menu-item">
+                <img src="../../public/images/ordemdeservico.png"> Ordem de Serviço
+            </a>
+            <a href="#" class="menu-item">
+                <img src="../../public/images/historico.png"> Histórico
+            </a>
+            <a href="#" class="menu-item">
+                <img src="../../public/images/aparelhos.png"> Aparelhos
+            </a>
+            <a href="#" class="menu-item">
+                <img src="../../public/images/salas.png"> Salas
+            </a>
+        </nav>
+        <div class="user">
+            <div class="user-info">
+                <span class="user-name">Perfil</span>
+                <span class="user-role">Administradora</span>
+            </div>
+            <img src="../../public/images/sair.png">
+        </div>
+    </aside>
+    <div class="container">
+        <main class="main-content">
+            <h1>Histôrico</h1>
+            <div class="content-box">
+                <form>
+                    <div class="grupo">
+                        <label for="bloco">Bloco *
+                            <select id="bloco" name="bloco" required>
+                                <option value="">selecione</option>
+                                <option value="c">Bloco c</option>
+                            </select>
+                        </label>
+    
+                        <label for="sala">Sala *
+                            <select id="sala" name="sala" required>
+                                <option value="">selecione</option>
+                                <option value="102">Sala 102</option>
+                            </select>
+                        </label>
+    
+                        <label for="data-inicio">Data início *
+                            <input type="date" name="data-inicio" id="data-inicio">
+                        </label>
+    
+                        <label for="data-final">Data final *
+                            <input type="date" name="data-final" id="data-final">
+                        </label>
+                    </div>
+
+                    <div class="grupo">
+                        <label for="aparelho">Aparelho *
+                            <select id="aparelho" name="aparelho" required>
+                                <option value="">selecione</option>
+                                <option value="">Split</option>
+                            </select>
+                        </label>
+    
+                        <label for="status">Status *
+                            <select id="status" name="status" required>
+                                <option value="">selecione</option>
+                                <option value="0">Solicitado</option>
+                                <option value="1">Concluído</option>
+                            </select>
+                        </label>
+    
+                        <label for="email-solicitante">Email do solicitante *
+                            <input type="text" name="email-solicitante" id="email-solicitante" placeholder="digite o email solicitante">
+                        </label>
+
+                    </div>
+    
+                    <button type="submit" id="entrar">Buscar</button>
+    
+                </form>
+                <table>
+                    <tr class="cabecalho">
+                      <th>Local</th>
+                      <th>Aparelho</th>
+                      <th>Data de Solicitação</th>
+                      <th>Problema</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr>
+                      <td>Bloco C - 102</td>
+                      <td>Splite</td>
+                      <td>23/08/2024</td>
+                      <td>ruído ruim</td>
+                      <td>solicitado</td>
+                    </tr>
+                  </table>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
