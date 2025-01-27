@@ -95,7 +95,7 @@ nav ul li:hover {
     background: rgba(55, 70, 205, 0.50);
 }
 
-nav ul li:nth-child(2) {
+nav ul li:nth-child() {
     border-radius: 54px;
     border: 2px solid rgba(163, 244, 255, 0.50);
     background: rgba(55, 70, 205, 0.50);
