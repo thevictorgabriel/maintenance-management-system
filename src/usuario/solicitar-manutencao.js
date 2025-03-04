@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -37,4 +37,4 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Erro ao enviar solicitação:", error);
         }
     });
-});
+});*/

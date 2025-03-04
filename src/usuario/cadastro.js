@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
 
     form.addEventListener("submit", async (e) => {
@@ -35,4 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Erro ao conectar com o servidor.");
         }
     });
-});
+});*/
