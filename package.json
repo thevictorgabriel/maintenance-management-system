@@ -12,6 +12,8 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "node.js": "^0.0.1-security",
     "sequelize": "^6.37.5"
   },
   "description": "Sistema Web para gestão de Manutenção dos Ares-condicionado",
@@ -25,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/thevictorgabriel/maintenance-management-system/issues"
   },
-  "homepage": "https://github.com/thevictorgabriel/maintenance-management-system#readme"
+  "homepage": "https://github.com/thevictorgabriel/maintenance-management-system#readme",
+  "keywords": []
 }
