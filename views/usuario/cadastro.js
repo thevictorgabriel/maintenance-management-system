@@ -1,5 +1,5 @@
-document.querySelector('form').addEventListener('submit', async (e) => {
-    e.preventDefault();
+document.querySelector('form').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
@@ -7,16 +7,19 @@ document.querySelector('form').addEventListener('submit', async (e) => {
     const confirmeSenha = document.getElementById('confirme-senha').value;
 
     if (senha !== confirmeSenha) {
-        alert('Senhas não conferem!');
+        alert('As senhas não conferem!');
         return;
     }
 
     const response = await fetch('http://localhost:3000/usuarios/cadastrar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nome, email, senha }),
+        body: JSON.stringify({ nome, email, senha })
     });
 
     const result = await response.json();
     alert(result.message);
+    if (response.ok) {
+        window.location.href = './login.html';
+    }
 });
