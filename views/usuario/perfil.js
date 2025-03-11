@@ -7,7 +7,7 @@ document.getElementById('salvar').addEventListener('click', async (e) => {
 
     const idUsuario = localStorage.getItem('idUsuario');
 
-    const response = await fetch('http://localhost:3000/api/usuario/perfil', {
+    const response = await fetch('http://localhost:3000/usuario/perfil', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ document.getElementById('deletar-perfil').addEventListener('click', async (e) =>
 
     const idUsuario = localStorage.getItem('idUsuario');
 
-    const response = await fetch('http://localhost:3000/api/usuario/perfil', {
+    const response = await fetch('http://localhost:3000/usuario/perfil', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
