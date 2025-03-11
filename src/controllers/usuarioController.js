@@ -1,6 +1,5 @@
 const connection = require('../bd');
 
-// Cadastro de usuário
 exports.cadastrarUsuario = (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -18,7 +17,6 @@ exports.cadastrarUsuario = (req, res) => {
     });
 };
 
-// Login de usuário
 exports.loginUsuario = (req, res) => {
     const { email, senha } = req.body;
 
@@ -34,7 +32,6 @@ exports.loginUsuario = (req, res) => {
         res.status(200).json({ message: "Login realizado com sucesso!" });
     });
 };
-
 
 exports.editarPerfil = (req, res) => {
     const { id, nome, email, senha } = req.body;
