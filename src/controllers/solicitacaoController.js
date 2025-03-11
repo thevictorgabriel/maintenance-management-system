@@ -1,27 +1,25 @@
-const connection = require('../db');
+const db = require('../bd');
 
+// Criar nova solicitação
 exports.criarSolicitacao = (req, res) => {
     const { bloco, sala, aparelho, problema, descricao, idUsuario } = req.body;
 
-    const query = 'INSERT INTO solicitacoes (bloco, sala, aparelho, problema, descricao, status, id_usuario) VALUES (?, ?, ?, ?, ?, "Solicitado", ?)';
-
-    connection.query(query, [bloco, sala, aparelho, problema, descricao, idUsuario], (err, result) => {
+    const query = 'INSERT INTO solicitacoes (bloco, sala, aparelho, problema, descricao, status, id_usuario) VALUES (?, ?, ?, ?, ?, "solicitado", ?)';
+    db.query(query, [bloco, sala, aparelho, problema, descricao, idUsuario], (err, result) => {
         if (err) {
-            console.error('Erro ao criar solicitação:', err);
-            return res.status(500).json({ message: "Erro ao criar solicitação." });
+            return res.status(500).json({ error: 'Erro ao criar solicitação' });
         }
-        res.status(201).json({ message: "Solicitação criada com sucesso!" });
+        res.json({ message: 'Solicitação criada com sucesso!' });
     });
 };
 
+// Listar solicitações
 exports.listarSolicitacoes = (req, res) => {
-    const query = 'SELECT * FROM solicitacoes';
-
-    connection.query(query, (err, results) => {
+    const query = 'SELECT bloco, sala, aparelho, problema, DATE_FORMAT(data_solicitacao, "%d/%m/%Y") AS data, status FROM solicitacoes';
+    db.query(query, (err, results) => {
         if (err) {
-            console.error('Erro ao buscar solicitações:', err);
-            return res.status(500).json({ message: "Erro ao buscar solicitações." });
+            return res.status(500).json({ error: 'Erro ao buscar solicitações' });
         }
-        res.status(200).json(results);
+        res.json(results);
     });
 };

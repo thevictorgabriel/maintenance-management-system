@@ -1,5 +1,6 @@
-const connection = require('../db');
+const connection = require('../bd');
 
+// Cadastro de usuário
 exports.cadastrarUsuario = (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -17,6 +18,7 @@ exports.cadastrarUsuario = (req, res) => {
     });
 };
 
+// Login de usuário
 exports.loginUsuario = (req, res) => {
     const { email, senha } = req.body;
 
@@ -33,28 +35,25 @@ exports.loginUsuario = (req, res) => {
     });
 };
 
-const db = require('../db');
 
 exports.editarPerfil = (req, res) => {
     const { id, nome, email, senha } = req.body;
 
     const query = 'UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?';
-    db.query(query, [nome, email, senha, id], (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: 'Erro ao atualizar perfil' });
-        }
-        res.json({ message: 'Perfil atualizado com sucesso!' });
+    connection.query(query, [nome, email, senha, id], (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+
+        res.status(200).json({ message: 'Perfil atualizado com sucesso' });
     });
 };
 
-exports.deletarPerfil = (req, res) => {
-    const { id } = req.body;
+exports.excluirPerfil = (req, res) => {
+    const { id } = req.params;
 
     const query = 'DELETE FROM usuarios WHERE id = ?';
-    db.query(query, [id], (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: 'Erro ao excluir perfil' });
-        }
-        res.json({ message: 'Perfil excluído com sucesso!' });
+    connection.query(query, [id], (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+
+        res.status(200).json({ message: 'Conta excluída com sucesso' });
     });
 };
