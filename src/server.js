@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/usuarios', usuarioRoutes);
-app.use('/solicitacoes', solicitacaoRoutes);
+app.use('/api', solicitacaoRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
