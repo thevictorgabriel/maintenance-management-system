@@ -1,23 +1,35 @@
-const db = require('../bd');
+const connection = require('../bd');
 
 exports.criarSolicitacao = (req, res) => {
-    const { bloco, sala, aparelho, problema, descricao, idUsuario } = req.body;
+    const { id_usuario, bloco, sala, aparelho, problema, descricao } = req.body;
 
-    const query = 'INSERT INTO solicitacoes (bloco, sala, aparelho, problema, descricao, status, id_usuario) VALUES (?, ?, ?, ?, ?, "solicitado", ?)';
-    db.query(query, [bloco, sala, aparelho, problema, descricao, idUsuario], (err, result) => {
+    if (!id_usuario || !bloco || !sala || !aparelho || !problema || !descricao) {
+        return res.status(400).json({ message: "Todos os campos são obrigatórios." });
+    }
+
+    const query = `INSERT INTO solicitacoes (id_usuario, bloco, sala, aparelho, problema, descricao) VALUES (?, ?, ?, ?, ?, ?)`;
+    
+    connection.query(query, [id_usuario, bloco, sala, aparelho, problema, descricao], (err, results) => {
         if (err) {
-            return res.status(500).json({ error: 'Erro ao criar solicitação' });
+            console.error("Erro ao criar solicitação:", err);
+            return res.status(500).json({ message: "Erro ao criar solicitação." });
         }
-        res.json({ message: 'Solicitação criada com sucesso!' });
+        res.status(201).json({ message: "Solicitação criada com sucesso!", id: results.insertId });
     });
 };
 
 exports.listarSolicitacoes = (req, res) => {
-    const query = 'SELECT bloco, sala, aparelho, problema, DATE_FORMAT(data_solicitacao, "%d/%m/%Y") AS data, status FROM solicitacoes';
-    db.query(query, (err, results) => {
+    const query = `
+        SELECT id, bloco, sala, aparelho, problema, status, 
+        DATE_FORMAT(data_solicitacao, '%d/%m/%Y') AS data_solicitacao 
+        FROM solicitacoes 
+        ORDER BY data_solicitacao DESC`;
+
+    connection.query(query, (err, results) => {
         if (err) {
-            return res.status(500).json({ error: 'Erro ao buscar solicitações' });
+            console.error("Erro ao buscar solicitações:", err);
+            return res.status(500).json({ message: "Erro ao buscar solicitações." });
         }
-        res.json(results);
+        res.status(200).json(results);
     });
 };
