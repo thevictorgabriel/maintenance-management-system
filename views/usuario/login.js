@@ -12,9 +12,9 @@ document.querySelector('form').addEventListener('submit', async (event) => {
 
     const result = await response.json();
     if (response.ok) {
-        alert('Login bem-sucedido!');
+        
         localStorage.setItem('usuario', JSON.stringify(result.usuario));
-        window.location.href = './perfil.html';
+        window.location.href = './solicitar-manutencao.html';
     } else {
         alert(result.message);
     }
