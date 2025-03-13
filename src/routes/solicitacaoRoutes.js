@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const solicitacaoController = require('../controllers/solicitacaoController');
+const { criarSolicitacao, listarSolicitacoes } = require('../controllers/solicitacaoController');
 
-router.post('/solicitacoes', solicitacaoController.criarSolicitacao);
-router.get('/solicitacoes', solicitacaoController.listarSolicitacoes);
+router.post('/solicitacoes', criarSolicitacao);
+router.get('/solicitacoes', listarSolicitacoes);
 
 module.exports = router;
