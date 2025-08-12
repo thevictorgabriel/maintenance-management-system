@@ -117,7 +117,7 @@ body {
 
 .background {
     width: 50%;
-    background-image: url('../../images/background-ligin.png');
+    background-image: url('../../public/images/background-ligin.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@ body {
 }
 
 .img {
-    background-image: url('../../images/floco-de-neve\ 1.png');
+    background-image: url('../../public/images/floco-de-neve\ 1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
