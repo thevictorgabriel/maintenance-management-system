@@ -1,29 +1,30 @@
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
+const path = require("path");
+const User = require("../models/userModel");
+
+exports.showLogin = (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "views", "login.html"));
+};
 
 exports.login = async (req, res) => {
-    const { email, senha } = req.body;
+  const { email, password } = req.body;
 
-    try {
-        const user = await User.findByEmail(email);
-        console.log('Usuário encontrado:', user);
+  const user = await User.findByEmailAndPassword(email, password);
+  if (!user) return res.redirect("/login");
 
-        if (!user) {
-            return res.status(401).send('Usuário não encontrado');
-        }
+  // Agora salvamos na sessão o valor do campo adm
+  req.session.user = {
+    id: user.id,
+    adm: user.adm === 1 ? true : false,
+  };
 
-        const senhaCorreta = (senha == user.senha);
-        if (!senhaCorreta) {
-            return res.status(401).send('Senha incorreta');
-        }
+  // Redireciona de acordo com o valor de adm
+  if (req.session.user.adm) {
+    return res.redirect("/admin");
+  } else {
+    return res.redirect("/user");
+  }
+};
 
-        if (user.adm) {
-            res.redirect('/adm');
-        } else {
-            res.redirect('/home'); // Página para usuários comuns
-        }
-    } catch (err) {
-        console.error('Erro no login:', err);
-        res.status(500).send('Erro no servidor');
-    }
+exports.logout = (req, res) => {
+  req.session.destroy(() => res.redirect("/"));
 };
